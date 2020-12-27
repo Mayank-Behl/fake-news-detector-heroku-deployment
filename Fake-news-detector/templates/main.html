@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Fake News Detection</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Pacifico"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Arimo"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Hind:300"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
+    <link rel="stylesheet" href="/static/css/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+      integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+      crossorigin="anonymous"
+    />
+  </head>
+
+  <body>
+    <div class="login">
+      <div>
+        <h1 class="title">Fake News Detector</h1>
+        <p>
+          A Machine Learning Web App, Built with Flask, Deployed using Heroku.
+        </p>
+        <p>Enter the link of the news for the result</p>
+      </div>
+      <!-- Main Input For Receiving Query to our ML -->
+      <form action="{{ url_for('predict')}}" method="post">
+        <input
+          type="text"
+          name="news"
+          placeholder="Enter the news url"
+          required="required"
+        />
+        <button type="submit" class="button">Predict</button>
+      </form>
+      {{ prediction_text }}
+      <div class="bottom-text">
+        <h5>
+          <a href="https://github.com/Mayank-Behl" target="_blank"
+            ><img
+              src="https://image.flaticon.com/icons/png/512/25/25231.png"
+              width="50px "
+              height="50px"
+          /></a>
+          <a
+            href="https://www.linkedin.com/in/mayank-behl-1b0413164/"
+            target="_blank"
+          >
+            <img
+              src="https://image.flaticon.com/icons/png/512/61/61109.png"
+              width="50px"
+              height="50px"
+          /></a>
+        </h5>
+        <h5 class="made-by">Made by Mayank</h5>
+      </div>
+    </div>
+  </body>
+</html>
